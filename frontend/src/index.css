@@ -1,0 +1,86 @@
+:root {
+  --bg: #f4efe6;
+  --bg-2: #fdf7ee;
+  --ink: #1f2a30;
+  --muted: #58656b;
+  --accent: #e07a5f;
+  --accent-2: #2a9d8f;
+  --accent-3: #3d405b;
+  --panel: #ffffff;
+  --panel-2: #fff3e1;
+  --line: #e6d7c4;
+  --shadow: 0 20px 40px rgba(31, 42, 48, 0.12);
+  --radius: 18px;
+  --font-sans: 'Avenir Next', Avenir, 'Trebuchet MS', 'Segoe UI', sans-serif;
+  --font-display: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+
+  font: 16px/1.6 var(--font-sans);
+  color: var(--ink);
+  background: var(--bg);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(120deg, var(--bg), var(--bg-2));
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: -10% -10% auto auto;
+  height: 60vh;
+  width: 60vw;
+  background: radial-gradient(
+      circle at 20% 20%,
+      rgba(42, 157, 143, 0.2),
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 80% 10%,
+      rgba(224, 122, 95, 0.2),
+      transparent 55%
+    );
+  pointer-events: none;
+  z-index: -1;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  color: var(--ink);
+}
+
+p {
+  margin: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+textarea {
+  resize: vertical;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
